@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jHK-OY-WfN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="RDV-8g-hTt">
+            <objects>
+                <tabBarController id="jHK-OY-WfN" customClass="MainTabBarController" customModule="live_streaming_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iI7-zm-ETs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="I2W-kt-vSK" kind="relationship" relationship="viewControllers" id="y0v-xu-7Xl"/>
+                        <segue destination="mIQ-9a-6Go" kind="relationship" relationship="viewControllers" id="pf8-vM-tKf"/>
+                        <segue destination="kML-GL-VKN" kind="relationship" relationship="viewControllers" id="QYX-pm-pHR"/>
+                        <segue destination="UZf-t8-MIH" kind="relationship" relationship="viewControllers" id="Frx-gl-9oQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7RJ-0E-XaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1198" y="650"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="zTo-oK-qzN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="I2W-kt-vSK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="btn_home_normal" selectedImage="btn_home_selected" id="l6d-Kv-b8J"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3TP-sW-KFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="-731"/>
+        </scene>
+        <!--Follow-->
+        <scene sceneID="w9J-bm-wlm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Follow" id="mIQ-9a-6Go" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="关注" image="btn_live_normal" selectedImage="btn_live_selected" id="jkv-VD-6HP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdH-4D-Ph5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301.60000000000002" y="193.85307346326837"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Dnj-sX-uhf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="kML-GL-VKN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="btn_user_normal" selectedImage="btn_user_selected" id="vbs-o9-8PN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sk-92-3Na" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="707"/>
+        </scene>
+        <!--Live-->
+        <scene sceneID="rQP-jn-Ykc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Live" id="UZf-t8-MIH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="直播" image="btn_column_normal" selectedImage="btn_column_selected" id="tfb-RF-DQz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYI-O0-iV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="1607"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_column_normal" width="24" height="24"/>
+        <image name="btn_column_selected" width="24" height="24"/>
+        <image name="btn_home_normal" width="24" height="24"/>
+        <image name="btn_home_selected" width="24" height="24"/>
+        <image name="btn_live_normal" width="30" height="24"/>
+        <image name="btn_live_selected" width="30" height="24"/>
+        <image name="btn_user_normal" width="24" height="24"/>
+        <image name="btn_user_selected" width="24" height="24"/>
+    </resources>
+</document>
