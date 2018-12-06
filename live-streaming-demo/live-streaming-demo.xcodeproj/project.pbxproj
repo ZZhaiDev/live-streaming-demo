@@ -27,6 +27,7 @@
 		389824F421B77BB700709548 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389824F321B77BB700709548 /* UIBarButtonItem-Extension.swift */; };
 		389824F621B77CCE00709548 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389824F521B77CCE00709548 /* PageTitleView.swift */; };
 		389824F921B7802D00709548 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389824F821B7802D00709548 /* Common.swift */; };
+		38C418DE21B8C1530062A009 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C418DD21B8C1530062A009 /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		389824F321B77BB700709548 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		389824F521B77CCE00709548 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		389824F821B7802D00709548 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		38C418DD21B8C1530062A009 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 			children = (
 				389824F321B77BB700709548 /* UIBarButtonItem-Extension.swift */,
 				389824F821B7802D00709548 /* Common.swift */,
+				38C418DD21B8C1530062A009 /* UIColor-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				389824CC21B7711400709548 /* ViewController.swift in Sources */,
+				38C418DE21B8C1530062A009 /* UIColor-Extension.swift in Sources */,
 				3898249A21B76CC000709548 /* AppDelegate.swift in Sources */,
 				389824F621B77CCE00709548 /* PageTitleView.swift in Sources */,
 				389824F121B777F000709548 /* MainTabBarController.swift in Sources */,
