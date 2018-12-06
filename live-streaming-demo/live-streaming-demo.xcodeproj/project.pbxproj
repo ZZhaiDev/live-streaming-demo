@@ -28,6 +28,11 @@
 		389824F621B77CCE00709548 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389824F521B77CCE00709548 /* PageTitleView.swift */; };
 		389824F921B7802D00709548 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389824F821B7802D00709548 /* Common.swift */; };
 		38C418DE21B8C1530062A009 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C418DD21B8C1530062A009 /* UIColor-Extension.swift */; };
+		38C418E021B8D4620062A009 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C418DF21B8D4620062A009 /* PageContentView.swift */; };
+		38C418E221B8D9850062A009 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C418E121B8D9850062A009 /* RecommendViewController.swift */; };
+		38C418E421B8D9990062A009 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C418E321B8D9990062A009 /* GameViewController.swift */; };
+		38C418E621B8D9A20062A009 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C418E521B8D9A20062A009 /* AmuseViewController.swift */; };
+		38C418E821B8D9AF0062A009 /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C418E721B8D9AF0062A009 /* FunnyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		389824F521B77CCE00709548 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		389824F821B7802D00709548 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		38C418DD21B8C1530062A009 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		38C418DF21B8D4620062A009 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		38C418E121B8D9850062A009 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		38C418E321B8D9990062A009 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		38C418E521B8D9A20062A009 /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
+		38C418E721B8D9AF0062A009 /* FunnyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +239,10 @@
 			children = (
 				389824E821B7775A00709548 /* Home.storyboard */,
 				389824DA21B7765600709548 /* HomeViewController.swift */,
+				38C418E121B8D9850062A009 /* RecommendViewController.swift */,
+				38C418E321B8D9990062A009 /* GameViewController.swift */,
+				38C418E521B8D9A20062A009 /* AmuseViewController.swift */,
+				38C418E721B8D9AF0062A009 /* FunnyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				389824F521B77CCE00709548 /* PageTitleView.swift */,
+				38C418DF21B8D4620062A009 /* PageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,8 +454,13 @@
 				389824E721B776B700709548 /* RoomViewController.swift in Sources */,
 				389824DB21B7765600709548 /* HomeViewController.swift in Sources */,
 				389824E121B7769C00709548 /* FollowViewController.swift in Sources */,
+				38C418E221B8D9850062A009 /* RecommendViewController.swift in Sources */,
+				38C418E421B8D9990062A009 /* GameViewController.swift in Sources */,
+				38C418E821B8D9AF0062A009 /* FunnyViewController.swift in Sources */,
 				389824E321B776A300709548 /* LiveViewController.swift in Sources */,
+				38C418E021B8D4620062A009 /* PageContentView.swift in Sources */,
 				389824E521B776B000709548 /* ProfilleViewController.swift in Sources */,
+				38C418E621B8D9A20062A009 /* AmuseViewController.swift in Sources */,
 				389824F421B77BB700709548 /* UIBarButtonItem-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

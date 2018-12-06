@@ -10,14 +10,23 @@ import UIKit
 
 private let kTitleViewH : CGFloat = 40
 
+
 class HomeViewController: UIViewController {
     
+    private lazy var navigationMaxY: CGFloat = (navigationController?.navigationBar.frame.maxY) ?? 88
     fileprivate lazy var pageTitleView: PageTitleView = {
-        let navigationMaxY: CGFloat = (navigationController?.navigationBar.frame.maxY) ?? 88
         let titleFrame = CGRect(x: 0, y: navigationMaxY, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         return titleView
+    }()
+    
+    fileprivate lazy var pageContentView: PageContentView = {
+        let contentY = navigationMaxY + kTitleViewH
+        let contentH = kScreenH - navigationMaxY - kTabbarH - kTitleViewH
+        let frame = CGRect(x: 0, y: contentY, width: kScreenW, height: contentH)
+        let view = PageContentView(frame: frame)
+        return view
     }()
 
     override func viewDidLoad() {
@@ -32,6 +41,7 @@ extension HomeViewController{
         setupNavigationBar()
         
         view.addSubview(pageTitleView)
+        view.addSubview(pageContentView)
         
     }
     
