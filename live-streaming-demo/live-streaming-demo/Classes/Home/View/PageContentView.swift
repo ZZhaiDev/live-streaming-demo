@@ -8,45 +8,43 @@
 
 import UIKit
 
+private let cellId = "cellId"
 
 protocol PageContentViewDelegate : class {
     func pageContentView(_ contentView : PageContentView, progress : CGFloat, sourceIndex : Int, targetIndex : Int)
 }
 
-private let ContentCellID = "ContentCellID"
-
 class PageContentView: UIView {
     
-    // MARK:- 定义属性
     fileprivate var childVcs : [UIViewController]
     fileprivate weak var parentViewController : UIViewController?
     fileprivate var startOffsetX : CGFloat = 0
     fileprivate var isForbidScrollDelegate : Bool = false
     weak var delegate : PageContentViewDelegate?
     
-    // MARK:- 懒加载属性
-    fileprivate lazy var collectionView : UICollectionView = {[weak self] in
-        // 1.创建layout
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = (self?.bounds.size)!
+    fileprivate lazy var collectionView: UICollectionView = {[weak self] in
+        let layout =  UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.scrollDirection = .horizontal
+        layout.itemSize = (self?.bounds.size)!
         
-        // 2.创建UICollectionView
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.showsHorizontalScrollIndicator = false
+        let collectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.scrollsToTop = false
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.scrollsToTop = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
-        
         return collectionView
         }()
     
-    // MARK:- 自定义构造函数
+    //    override init(frame: CGRect) {
+    //        super.init(frame: frame)
+    //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+    //        setupUI()
+    //    }
+    
     init(frame: CGRect, childVcs : [UIViewController], parentViewController : UIViewController?) {
         self.childVcs = childVcs
         self.parentViewController = parentViewController
@@ -63,36 +61,31 @@ class PageContentView: UIView {
     
 }
 
-// MARK:- 设置UI界面
-extension PageContentView {
-    fileprivate func setupUI() {
-        // 1.将所有的子控制器添加父控制器中
-        for childVc in childVcs {
-            parentViewController?.addChild(childVc)
-        }
+extension PageContentView{
+    fileprivate func setupUI(){
         
-        // 2.添加UICollectionView,用于在Cell中存放控制器的View
+        // WARNING:- 这个需要吗？
+        //        for childVc in childVcs {
+        //            parentViewController?.addChild(childVc)
+        //        }
         addSubview(collectionView)
         collectionView.frame = bounds
     }
 }
 
 
-// MARK:- 遵守UICollectionViewDataSource
-extension PageContentView : UICollectionViewDataSource {
+extension PageContentView: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return childVcs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1.创建Cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCellID, for: indexPath)
-        
-        // 2.给Cell设置内容
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        // WARNING:- 这个需要吗？
         for view in cell.contentView.subviews {
             view.removeFromSuperview()
         }
-        
+        ZJPrint(indexPath.item)
         let childVc = childVcs[(indexPath as NSIndexPath).item]
         childVc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childVc.view)
@@ -100,6 +93,8 @@ extension PageContentView : UICollectionViewDataSource {
         return cell
     }
 }
+
+
 
 // MARK:- 遵守UICollectionViewDelegate
 extension PageContentView : UICollectionViewDelegate {
@@ -139,6 +134,12 @@ extension PageContentView : UICollectionViewDelegate {
             
             // 4.如果完全划过去
             if currentOffsetX - startOffsetX == scrollViewW {
+                progress = 1
+                targetIndex = sourceIndex
+            }
+            
+            //            第二个Bug是滑动到最后一个快速滑多一下会闪一下，这样操作会导致最后回调时progress会变一下0，所以先变一下灰色，再变黄色，我这边直接用progress做判断就没问题了
+            if progress == 0 {
                 progress = 1
                 targetIndex = sourceIndex
             }
