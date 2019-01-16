@@ -1,0 +1,6 @@
+framework module Pods_live_streaming_demo {
+  umbrella header "Pods-live-streaming-demo-umbrella.h"
+
+  export *
+  module * { export * }
+}

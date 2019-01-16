@@ -8,23 +8,71 @@
 
 import UIKit
 
+private let basicCellId  = "cellId"
+private let zjCycleViewH = zjScreenW * 3 / 8
+private let zjGameViewH : CGFloat = 90
+
+
 class RecommendViewController: UIViewController {
+    
+    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    
+    let cycleView: RecommendCycleView = {
+       let cv = RecommendCycleView.recommendCycleView()
+        cv.frame = CGRect(x: 0, y: -(zjCycleViewH+zjGameViewH), width: zjScreenW, height: zjCycleViewH)
+        return cv
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: zjScreenW, height: 200)
+        let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        cv.dataSource = self
+        return cv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        loadData()
+    }
+}
+
+
+// MARK:- UISETUP
+extension RecommendViewController{
+    fileprivate func setupUI(){
+        collectionView.contentInset = UIEdgeInsets(top: zjCycleViewH + zjGameViewH, left: 0, bottom: 0, right: 0)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: basicCellId)
         self.view.backgroundColor = .white
-        // Do any additional setup after loading the view.
+        view.addSubview(collectionView)
+        collectionView.addSubview(cycleView)
+        collectionView.backgroundColor = .clear
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    fileprivate func loadData(){
+        recommendVM.requestCycleData {
+            ZJPrint(self.recommendVM.cycleModels)
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
+        }
     }
-    */
+}
 
+
+
+// MARK:- collectionView dataSource
+extension RecommendViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: basicCellId, for: indexPath)
+        
+        if indexPath.item % 2 == 0{
+            cell.backgroundColor = .blue
+        }else{
+            cell.backgroundColor = .black
+        }
+        return cell
+    }
 }
