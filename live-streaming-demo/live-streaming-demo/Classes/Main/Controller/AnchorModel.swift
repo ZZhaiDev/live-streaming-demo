@@ -1,14 +1,14 @@
 //
-//  AnchorModel.swift
-//  DYZB
+//  PageContentView.swift
+//  live-streaming-demo
 //
-//  Created by 1 on 16/9/19.
-//  Copyright © 2016年 小码哥. All rights reserved.
+//  Created by zijia on 12/5/18.
+//  Copyright © 2018 zijia. All rights reserved.
 //
 
 import UIKit
 
-@objc
+
 class AnchorModel: NSObject {
     /// 房间ID
   @objc  var room_id : Int = 0

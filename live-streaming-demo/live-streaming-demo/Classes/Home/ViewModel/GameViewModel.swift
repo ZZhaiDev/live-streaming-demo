@@ -9,7 +9,7 @@
 import UIKit
 
 class GameViewModel {
-    lazy var games : [GameModel] = [GameModel]()
+    lazy var games : [BaseGameModel] = [BaseGameModel]()
 }
 
 extension GameViewModel {
@@ -21,7 +21,7 @@ extension GameViewModel {
             
             // 2.字典转模型
             for dict in dataArray {
-                self.games.append(GameModel(dict: dict))
+                self.games.append(BaseGameModel(dict: dict))
             }
             
             // 3.完成回调
