@@ -23,6 +23,11 @@ class RecommendViewController: UIViewController {
         return cv
     }()
     
+    let gameView: RecommendGameView = {
+       let gv = RecommendGameView(frame: CGRect(x: 0, y: -zjGameViewH, width: zjScreenW, height: zjGameViewH))
+        return gv
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: zjScreenW, height: 200)
@@ -47,6 +52,7 @@ extension RecommendViewController{
         self.view.backgroundColor = .white
         view.addSubview(collectionView)
         collectionView.addSubview(cycleView)
+        collectionView.addSubview(gameView)
         collectionView.backgroundColor = .clear
     }
     
