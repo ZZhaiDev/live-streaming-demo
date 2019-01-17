@@ -19,9 +19,7 @@ class CycleCell: UICollectionViewCell {
         didSet {
             if let cycle = cycleModel{
                 titleLabel.text = cycle.title
-                ZJPrint(titleLabel.text)
                 let iconURL = URL(string: cycle.pic_url)
-                ZJPrint(iconURL)
                 imageView.kf.setImage(with: iconURL, placeholder: UIImage(named: "Img_default"))
                 
             }
