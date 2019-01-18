@@ -1,4 +1,6 @@
 # live-streaming-demo
+## Repository is archived, here is the demo what I have done.
+![](https://github.com/zijiazhai/live-streaming-demo/blob/master/Github-Gif/ezgif.com-video-to-gif.gif)
 
 ## Issues
 #### Issue 1: SetValueForKeys is not working in swift 4
