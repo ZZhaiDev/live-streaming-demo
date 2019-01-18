@@ -13,6 +13,13 @@ private let zjEdgeInsetMargin : CGFloat = 10
 
 class RecommendGameView: UIView {
     
+    var groups : [BaseGameModel]? {
+        didSet {
+            // 刷新表格
+            collectionView.reloadData()
+        }
+    }
+    
     fileprivate lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 80, height: self!.frame.size.height)
@@ -39,16 +46,14 @@ class RecommendGameView: UIView {
 
 extension RecommendGameView: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return groups?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameCell
-        if indexPath.item%2 == 0{
-            cell.backgroundColor = .green
-        }else{
-            cell.backgroundColor = .black
-        }
+        
+        cell.baseGame = groups![(indexPath as NSIndexPath).item]
+        
         return cell
     }
 }

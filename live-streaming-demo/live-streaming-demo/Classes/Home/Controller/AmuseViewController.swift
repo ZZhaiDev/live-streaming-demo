@@ -18,7 +18,7 @@ let zjNormalItemW = (zjScreenW - 3 * zjItemMargin) / 2
 let zjNormalItemH = zjNormalItemW * 3 / 4
 
 
-class AmuseViewController: UIViewController {
+class AmuseViewController: BaseViewController {
     
     fileprivate lazy var amuseVM : AmuseViewModel = AmuseViewModel()
     let amuseMenuView: AmuseMenuView = {
@@ -48,20 +48,20 @@ class AmuseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUI()
         loadData()
     }
 }
 
 
 extension AmuseViewController{
-    fileprivate func setupUI(){
+    override func setupUI(){
 //        self.view.backgroundColor = UIColor.black
-        
+        contentView = collectionView
         collectionView.contentInset = UIEdgeInsets(top: zjMenuViewH, left: 0, bottom: 0, right: 0)
         view.addSubview(collectionView)
         collectionView.addSubview(amuseMenuView)
+        
+        super.setupUI()
     }
     
     fileprivate func loadData(){
@@ -70,6 +70,7 @@ extension AmuseViewController{
             tempGroups.removeFirst()
             self.amuseMenuView.groups = tempGroups
             self.collectionView.reloadData()
+            self.loadDataFinished()
         }
     }
 }

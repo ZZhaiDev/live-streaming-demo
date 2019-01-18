@@ -58,6 +58,10 @@
 		A4BD0CE321F11DB000F0CE51 /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BD0CE121F11DB000F0CE51 /* CollectionNormalCell.swift */; };
 		A4BD0CE621F1276500F0CE51 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BD0CE421F1276500F0CE51 /* CollectionHeaderView.swift */; };
 		A4BD0CE721F1276500F0CE51 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BD0CE521F1276500F0CE51 /* CollectionHeaderView.xib */; };
+		A4BD0CEE21F2626500F0CE51 /* CollectionPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BD0CEC21F2626400F0CE51 /* CollectionPrettyCell.swift */; };
+		A4BD0CEF21F2626500F0CE51 /* CollectionPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BD0CED21F2626500F0CE51 /* CollectionPrettyCell.xib */; };
+		A4BD0CF121F262A200F0CE51 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BD0CF021F262A200F0CE51 /* CollectionBaseCell.swift */; };
+		A4BD0CF321F26AB800F0CE51 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BD0CF221F26AB800F0CE51 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,10 @@
 		A4BD0CE121F11DB000F0CE51 /* CollectionNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
 		A4BD0CE421F1276500F0CE51 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		A4BD0CE521F1276500F0CE51 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
+		A4BD0CEC21F2626400F0CE51 /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
+		A4BD0CED21F2626500F0CE51 /* CollectionPrettyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionPrettyCell.xib; sourceTree = "<group>"; };
+		A4BD0CF021F262A200F0CE51 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		A4BD0CF221F26AB800F0CE51 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DB8EB3F1B0D40DE4912850D2 /* Pods-live-streaming-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live-streaming-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-live-streaming-demo/Pods-live-streaming-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		F86F2D7BE76FA0298931F5A3 /* Pods-live-streaming-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live-streaming-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-live-streaming-demo/Pods-live-streaming-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -311,6 +319,7 @@
 		389824D921B7763800709548 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A4BD0CF221F26AB800F0CE51 /* BaseViewController.swift */,
 				389824D721B7756200709548 /* Main.storyboard */,
 				389824F021B777F000709548 /* MainTabBarController.swift */,
 				A4BD0CD721F0FD9900F0CE51 /* AnchorGroup.swift */,
@@ -436,6 +445,9 @@
 				A4BD0CE021F11DB000F0CE51 /* CollectionNormalCell.xib */,
 				A4BD0CE421F1276500F0CE51 /* CollectionHeaderView.swift */,
 				A4BD0CE521F1276500F0CE51 /* CollectionHeaderView.xib */,
+				A4BD0CF021F262A200F0CE51 /* CollectionBaseCell.swift */,
+				A4BD0CEC21F2626400F0CE51 /* CollectionPrettyCell.swift */,
+				A4BD0CED21F2626500F0CE51 /* CollectionPrettyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -563,6 +575,7 @@
 				3847515021F01E3500D61926 /* GameCell.xib in Resources */,
 				389824EB21B7778200709548 /* Follow.storyboard in Resources */,
 				389824D821B7756200709548 /* Main.storyboard in Resources */,
+				A4BD0CEF21F2626500F0CE51 /* CollectionPrettyCell.xib in Resources */,
 				389824A421B76CC100709548 /* LaunchScreen.storyboard in Resources */,
 				A4BD0CBE21EFC85300F0CE51 /* RecommendCycleView.xib in Resources */,
 				389824A121B76CC100709548 /* Assets.xcassets in Resources */,
@@ -646,8 +659,10 @@
 				389824F121B777F000709548 /* MainTabBarController.swift in Sources */,
 				A4BD0CD021EFD7D300F0CE51 /* NetworkTools.swift in Sources */,
 				389824F921B7802D00709548 /* Common.swift in Sources */,
+				A4BD0CF321F26AB800F0CE51 /* BaseViewController.swift in Sources */,
 				389824E721B776B700709548 /* RoomViewController.swift in Sources */,
 				A4BD0CD821F0FD9900F0CE51 /* AnchorGroup.swift in Sources */,
+				A4BD0CEE21F2626500F0CE51 /* CollectionPrettyCell.swift in Sources */,
 				3847514821F0184F00D61926 /* RecommendGameView.swift in Sources */,
 				A4BD0CC821EFD65A00F0CE51 /* CycleModel.swift in Sources */,
 				389824DB21B7765600709548 /* HomeViewController.swift in Sources */,
@@ -664,6 +679,7 @@
 				389824E321B776A300709548 /* LiveViewController.swift in Sources */,
 				38C418E021B8D4620062A009 /* PageContentView.swift in Sources */,
 				389824E521B776B000709548 /* ProfilleViewController.swift in Sources */,
+				A4BD0CF121F262A200F0CE51 /* CollectionBaseCell.swift in Sources */,
 				38C418E621B8D9A20062A009 /* AmuseViewController.swift in Sources */,
 				A4BD0CDD21F110D000F0CE51 /* AmuseMenuViewCell.swift in Sources */,
 				A4BD0CDA21F1024900F0CE51 /* AmuseViewModel.swift in Sources */,
