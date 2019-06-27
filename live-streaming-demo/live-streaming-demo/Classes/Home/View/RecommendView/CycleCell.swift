@@ -13,27 +13,21 @@ class CycleCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    
-    
-    var cycleModel : CycleModel? {
+
+    var cycleModel: CycleModel? {
         didSet {
-            if let cycle = cycleModel{
+            if let cycle = cycleModel {
                 titleLabel.text = cycle.title
                 let iconURL = URL(string: cycle.pic_url)
-                
+
                 imageView.kf.setImage(with: iconURL, placeholder: UIImage(named: "Img_default"))
-                
             }
-            
-            
         }
     }
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
 
 }

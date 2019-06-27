@@ -9,17 +9,17 @@
 import UIKit
 
 private let cellId = "cellId"
-private let zjEdgeInsetMargin : CGFloat = 10
+private let zjEdgeInsetMargin: CGFloat = 10
 
 class RecommendGameView: UIView {
-    
-    var groups : [BaseGameModel]? {
+
+    var groups: [BaseGameModel]? {
         didSet {
             // 刷新表格
             collectionView.reloadData()
         }
     }
-    
+
     fileprivate lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 80, height: self!.frame.size.height)
@@ -31,29 +31,27 @@ class RecommendGameView: UIView {
         cv.backgroundColor = .clear
         return cv
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(collectionView)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
 
-
-extension RecommendGameView: UICollectionViewDataSource{
+extension RecommendGameView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groups?.count ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GameCell
-        
         cell.baseGame = groups![(indexPath as NSIndexPath).item]
-        
+
         return cell
     }
 }

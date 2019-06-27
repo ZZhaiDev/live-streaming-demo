@@ -8,13 +8,12 @@
 
 import UIKit
 
-class BaseGameModel: NSObject{
-    
-  @objc var tag_name : String = ""
-  @objc var icon_url : String = ""
+class BaseGameModel: NSObject {
+
+  @objc var tag_name: String = ""
+  @objc var icon_url: String = ""
     override init() {}
-    
-    init(dict : [String : Any]) {
+    init(dict: [String: Any]) {
         super.init()
         setValuesForKeys(dict)
     }

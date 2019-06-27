@@ -12,11 +12,10 @@ class GameCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var labelView: UILabel!
-    
-    var baseGame : BaseGameModel? {
+
+    var baseGame: BaseGameModel? {
         didSet {
             labelView.text = baseGame?.tag_name
-            
             if let iconURL = URL(string: baseGame?.icon_url ?? "") {
                 imageView.kf.setImage(with: iconURL)
             } else {
@@ -24,7 +23,7 @@ class GameCell: UICollectionViewCell {
             }
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

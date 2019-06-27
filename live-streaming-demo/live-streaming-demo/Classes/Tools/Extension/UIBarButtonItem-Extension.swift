@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIBarButtonItem {
-    
-    convenience init(imageName : String, highImageName : String = "", size : CGSize = CGSize.zero)  {
+
+    convenience init(imageName: String, highImageName: String = "", size: CGSize = CGSize.zero) {
         let btn = UIButton()
         btn.setImage(UIImage(named: imageName), for: UIControl.State())
         if highImageName != "" {
@@ -21,7 +21,7 @@ extension UIBarButtonItem {
         } else {
             btn.frame = CGRect(origin: CGPoint.zero, size: size)
         }
-        self.init(customView : btn)
+        self.init(customView: btn)
     }
-    
+
 }

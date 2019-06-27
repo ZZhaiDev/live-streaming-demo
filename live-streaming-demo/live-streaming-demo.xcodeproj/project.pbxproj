@@ -474,6 +474,7 @@
 				3898249321B76CC000709548 /* Frameworks */,
 				3898249421B76CC000709548 /* Resources */,
 				AB3CC8396AAB6C197B65200A /* [CP] Embed Pods Frameworks */,
+				A4BD40DC22C54B760074CD11 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -603,6 +604,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A4BD40DC22C54B760074CD11 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		AB3CC8396AAB6C197B65200A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

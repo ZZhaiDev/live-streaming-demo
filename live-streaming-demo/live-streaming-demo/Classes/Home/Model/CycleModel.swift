@@ -8,18 +8,17 @@
 
 import UIKit
 
-
 class CycleModel: NSObject {
-   @objc var title : String = ""
-   @objc var pic_url : String = ""
-   @objc var room : [String : NSObject]? {
+   @objc var title: String = ""
+   @objc var pic_url: String = ""
+   @objc var room: [String: NSObject]? {
         didSet {
-            guard let room = room else  { return }
+            guard let room = room else { return }
             anchor = AnchorModel(dict: room)
         }
     }
-  @objc  var anchor : AnchorModel?
-    init(dict : [String : NSObject]) {
+  @objc  var anchor: AnchorModel?
+    init(dict: [String: NSObject]) {
         super.init()
         setValuesForKeys(dict)
     }

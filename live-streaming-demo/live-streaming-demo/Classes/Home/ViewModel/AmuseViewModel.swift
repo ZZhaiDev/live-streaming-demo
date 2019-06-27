@@ -8,11 +8,11 @@
 
 import UIKit
 
-class AmuseViewModel : BaseViewModel {
+class AmuseViewModel: BaseViewModel {
 }
 
 extension AmuseViewModel {
-    func loadAmuseData(finishedCallback : @escaping () -> ()) {
+    func loadAmuseData(finishedCallback : @escaping () -> Void) {
         loadAnchorData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2", finishedCallback: finishedCallback)
     }
 }

@@ -12,12 +12,11 @@ let zjScreenW = UIScreen.main.bounds.width
 let zjScreenH = UIScreen.main.bounds.height
 
 let isIphoneX = zjScreenH >= 812 ? true : false
-let zjStatusBarH : CGFloat = isIphoneX ? 44 : 20
-let zjNavigationBarH : CGFloat = 44
-let zjTabbarH : CGFloat = isIphoneX ? 49 + 34 : 49
+let zjStatusBarH: CGFloat = isIphoneX ? 44 : 20
+let zjNavigationBarH: CGFloat = 44
+let zjTabbarH: CGFloat = isIphoneX ? 49 + 34 : 49
 
-
-func ZJPrint<T>(_ message : T, file : String = #file, lineNumber : Int = #line) {
+func ZJPrint<T>(_ message: T, file: String = #file, lineNumber: Int = #line) {
     #if DEBUG
     let fileName = (file as NSString).lastPathComponent
     print("ZJPrint: \(NSDate())----\(fileName) line:\(lineNumber)- \(message)")
