@@ -1,4 +1,12 @@
 # live-streaming-demo
+## Description
+The purpose of this project is to practice and learn how to build beautiful UI by UICollectionViews.
+
+The APIs and images are public powered by DouYu, a live-streaming company.
+## Libraries and tools used
+- [Alamofire](https://github.com/Alamofire/Alamofire) - Alamofire is an HTTP networking library written in Swift.
+- [Kingfisher](https://github.com/onevcat/Kingfisher) - A lightweight, pure-Swift library for downloading and caching images from the web.
+
 ## Repository is archived, here is the demo what I have done.
 ![](https://github.com/zijiazhai/live-streaming-demo/blob/master/Github-Gif/ezgif.com-video-to-gif.gif)
 
